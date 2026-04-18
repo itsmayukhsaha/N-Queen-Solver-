@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>N-Queen Solver | Chess Puzzle Solver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <h1 class="title">♕ N-Queen Solver</h1>
+        <p class="subtitle">Solving the N-Queens Problem with Backtracking & Forward Checking</p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Control Panel -->
+      <section class="control-panel">
+        <div class="section-title">Configuration</div>
+        
+        <div class="input-group">
+          <label for="nValue">Board Size (N)</label>
+          <input type="number" id="nValue" placeholder="4-10" min="4" max="10">
+          <span class="input-hint">Choose the board size (4 to 10)</span>
+        </div>
+
+        <div class="input-group">
+          <label for="limitValue">Max Solutions</label>
+          <input type="number" id="limitValue" placeholder="Leave empty for all solutions">
+          <span class="input-hint">Limit the number of solutions (optional)</span>
+        </div>
+
+        <button class="btn btn-primary" onclick="start()">
+          <span class="btn-icon">🔍</span> Solve
+        </button>
+      </section>
+
+      <!-- Controls -->
+      <section class="controls-panel">
+        <div class="section-title">Navigation</div>
+        
+        <div class="button-group">
+          <button class="btn btn-secondary" onclick="prevSolution()">
+            <span class="btn-icon">◀</span> Previous
+          </button>
+          <button class="btn btn-secondary" onclick="nextSolution()">
+            <span class="btn-icon">▶</span> Next
+          </button>
+          <button class="btn btn-secondary" onclick="autoPlay()" id="autoPlayBtn">
+            <span class="btn-icon">▶▶</span> Auto Play
+          </button>
+          <button class="btn btn-secondary" onclick="drawAllSolutions()">
+            <span class="btn-icon">📊</span> Show All
+          </button>
+        </div>
+
+        <div class="speed-control">
+          <label for="speed">Animation Speed</label>
+          <div class="speed-wrapper">
+            <span class="speed-label">Slow</span>
+            <input type="range" id="speed" min="50" max="1200" value="400" class="speed-slider">
+            <span class="speed-label">Fast</span>
+          </div>
+          <p class="speed-note">Higher value = faster transition</p>
+        </div>
+      </section>
+
+      <!-- Board Display -->
+      <section class="board-section">
+        <div id="info" class="info-panel"></div>
+        <div id="board" class="board-display"></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>N-Queens Problem Solver | CSP Algorithm with Backtracking</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
